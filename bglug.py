@@ -5,7 +5,6 @@ import tkinter
 from tkinter import Button, Label, Text, messagebox, Menu
 from tkinter import *
 main = tkinter.Tk()
-messagebox.showinfo("Welcome!", "to BGLUGwatch")
 menubar = Menu(main)
 main.title("BGLUGwatch")
 # DECLARING
@@ -55,12 +54,15 @@ filemenu.add_separator()
 filemenu.add_command(label="Exit", command=main.quit)
 menubar.add_cascade(label="File", menu=filemenu)
 # create another pulldown menu, and add IT to the menu bar
-filemenu = Menu(menubar, tearoff=0)
-filemenu.add_command(label="About...", command=hello)
-filemenu.add_command(label="Save", command=hello)
-filemenu.add_separator()
-filemenu.add_command(label="Exit", command=main.quit)
-menubar.add_cascade(label="View", menu=filemenu)
+viewmnu = Menu(menubar, tearoff=0)
+viewmnu.add_command(label="About...", command=hello)
+viewmnu.add_command(label="Save", command=hello)
+viewmnu.add_separator()
+viewmnu.add_command(label="Exit", command=main.quit)
+menubar.add_cascade(label="View", menu=viewmnu)
 # display the menu
 main.config(menu=menubar)
+# MESSAGES
+# show message on launch
+messagebox.showinfo("Welcome!", "to BGLUGwatch")
 main.mainloop()
