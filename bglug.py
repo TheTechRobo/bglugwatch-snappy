@@ -1,3 +1,6 @@
+# bglugwatch 0.1
+# copyright (c) 2019 anthony morassutti
+# import necessary modules
 import tkinter
 from tkinter import Button, Label, Text, messagebox, Menu
 from tkinter import *
