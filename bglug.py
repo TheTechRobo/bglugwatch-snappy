@@ -51,14 +51,15 @@ BGLUGwatch copyright (c) 2019 Anthony Morassutti. Licensed under the GNU GPLv3. 
 filemenu = Menu(menubar, tearoff=0)
 filemenu.add_command(label="About...", command=hello)
 filemenu.add_separator()
-filemenu.add_command(label="Exit", command=main.quit)
+filemenu.add_command(label="Exit BGLUGwatch", command=main.quit)
 menubar.add_cascade(label="File", menu=filemenu)
 # create another pulldown menu, and add IT to the menu bar
 viewmnu = Menu(menubar, tearoff=0)
 viewmnu.add_command(label="About...", command=hello)
-viewmnu.add_command(label="Save", command=hello)
+viewmnu.add_command(label="Articles", command=hello)
+viewmnu.add_command(label="Meeting list", command=hello)
 viewmnu.add_separator()
-viewmnu.add_command(label="Exit", command=main.quit)
+viewmnu.add_command(label="Exit BGLUGwatch", command=main.quit)
 menubar.add_cascade(label="View", menu=viewmnu)
 # display the menu
 main.config(menu=menubar)
