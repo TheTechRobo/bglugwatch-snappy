@@ -2,7 +2,7 @@
 # copyright (c) 2019 anthony morassutti
 # import necessary modules
 import tkinter
-from tkinter import Button, Label, Text, messagebox, Menu
+from tkinter import Button, Label, Text, messagebox, Menu, ttk
 from tkinter import *
 main = tkinter.Tk()
 menubar = Menu(main)
@@ -19,7 +19,7 @@ holds monthly meetings, gives technical presentations, distributes Linux CD-ROMs
 
 The Bruce-Grey Linux Users Group is currently centered in Owen Sound, but has members scattered around Bruce and Grey counties. The group is freely open to everyone.
 
-Please see the support section and it's sub topics for more information on the various services available.
+Please see the support section and its sub topics for more information on the various services available.
 
 We gather together for four main reasons:
 - advocacy
@@ -29,7 +29,7 @@ We gather together for four main reasons:
 
 SHORT HISTORY
 
-Bruce Grey Linux Users Group was originally founded by Richard Court in early 2000. Richard Court, Brad Rodriguez, Andrew Howlett and Dan Eriksen have been key members since it's creation.
+Bruce Grey Linux Users Group was originally founded by Richard Court in early 2000. Richard Court, Brad Rodriguez, Andrew Howlett and Dan Eriksen have been key members since its creation.
 
 Richard has given up control of BGLUG to the current active maintainer, Dan Eriksen (site admin, LPIC-1 certified). A lot of work is still from the other members of the group, namely Andrew Howlett (meeting
  coordinator, LPIC-1 certified) who started our free CDs service.
@@ -52,7 +52,7 @@ filemenu = Menu(menubar, tearoff=0)
 filemenu.add_command(label="About...", command=hello)
 filemenu.add_separator()
 filemenu.add_command(label="Exit BGLUGwatch", command=main.quit)
-menubar.add_cascade(label="File", menu=filemenu)
+menubar.add_cascade(label="BGLUGwatch", menu=filemenu)
 # create another pulldown menu, and add IT to the menu bar
 viewmnu = Menu(menubar, tearoff=0)
 viewmnu.add_command(label="About...", command=hello)
@@ -63,6 +63,19 @@ viewmnu.add_command(label="Exit BGLUGwatch", command=main.quit)
 menubar.add_cascade(label="View", menu=viewmnu)
 # display the menu
 main.config(menu=menubar)
+# Tabs (src https://djangocentral.com/creating-tabbed-widget-with-python-for-gui-application/)
+#Create Tab Control
+TAB_CONTROL = ttk.Notebook(main)
+#Tab1
+TAB1 = ttk.Frame(TAB_CONTROL)
+TAB_CONTROL.add(TAB1, text='Meetings')
+#Tab2
+TAB2 = ttk.Frame(TAB_CONTROL)
+TAB_CONTROL.add(TAB2, text='Articles')
+#Tab3
+TAB3 = ttk.Frame(TAB_CONTROL)
+TAB_CONTROL.add(TAB3, text='Mailing list')
+TAB_CONTROL.pack(expand=1, fill="both")
 # MESSAGES
 # show message on launch
 messagebox.showinfo("Welcome!", "to BGLUGwatch")
