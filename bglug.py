@@ -2,7 +2,7 @@
 # copyright (c) 2019 anthony morassutti
 # import necessary modules
 import tkinter
-from tkinter import Button, Label, Text, messagebox, Menu, ttk
+from tkinter import Button, Label, Text, messagebox, Menu, ttk, colorchooser
 from tkinter import *
 main = tkinter.Tk()
 menubar = Menu(main)
@@ -76,7 +76,18 @@ TAB_CONTROL.add(TAB2, text='Articles')
 TAB3 = ttk.Frame(TAB_CONTROL)
 TAB_CONTROL.add(TAB3, text='Mailing list')
 TAB_CONTROL.pack(expand=1, fill="both")
+#For tab 1
+ttk.Label(TAB1, text="Meeting November 2019").pack()
+ttk.Button(TAB1, text="More info...", command=hello).pack()
+#For tab 2
+def abtlin():
+    abtlin = Toplevel()
+    abtlin.title('About BGLUG and the program')
+    variablex = '''GNU/Linux ("Linux") is a clone of the operating system Unix. It was originally created by Linus Torvalds with the assistance of thousands of volunteer developers around the world. It is distributed under the GNU 
+General Public License which means the source code is freely available to everyone. Linux has powered much of the Internet for years, and is now available with many applications for "desktop" computer users.'''
+    ttk.Label(abtlin, text=variablex).pack()
+ttk.Button(TAB2, text="About Linux", command=abtlin).pack()
 # MESSAGES
 # show message on launch
-messagebox.showinfo("Welcome!", "to BGLUGwatch")
+messagebox.showinfo("Welcome!", "Next meeting: November __ 7pm United Way")
 main.mainloop()
