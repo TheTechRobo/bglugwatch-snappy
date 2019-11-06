@@ -95,7 +95,7 @@ ttk.Button(TAB1, text="More info...", command=moreinfomeeting).pack()
 #For tab 2
 def abtlin():
     abtlin = Toplevel()
-    abtlin.title('About BGLUG and the program')
+    abtlin.title('About GNU/Linux')
     variablex = '''GNU/Linux ("Linux") is a clone of the operating system Unix. It was originally created by Linus Torvalds with the assistance of thousands of volunteer developers around the world. It is distributed under the GNU 
 General Public License which means the source code is freely available to everyone. Linux has powered much of the Internet for years, and is now available with many applications for "desktop" computer users.'''
     ttk.Label(abtlin, text=variablex).pack()
@@ -105,7 +105,7 @@ ttk.Label(TAB3, text="3 NEWEST MAIL ON MAILING LIST").pack()
 ttk.Label(TAB3, text='''
 1. Andrew Howlett
 Hellvetica font:
-"I had to...''').pack()
+"Hi everyone. ..."''').pack()
 def ShowMessageOne():
     print("Showing message one, if anyone's listening......")
     content = '''
@@ -146,5 +146,5 @@ def subshelp():
 ttk.Button(TAB3, text="Subscribing without a Web browser", command=subshelp)
 # MESSAGES
 # show message on launch
-messagebox.showinfo("Welcome!", "Next meeting: November __ 7pm United Way")
+messagebox.showinfo("Welcome!", "Next meeting: December __ 7pm United Way")
 main.mainloop()
