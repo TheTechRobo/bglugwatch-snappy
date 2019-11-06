@@ -121,8 +121,8 @@ def ShowMessageOne():
     m1 = Toplevel()
     m1.title('Hellvetica font')
     Label(m1, text=content).pack()
-ttk.Button(TAB1, text="Read", command=ShowMessageOne)
-ttk.Label(TAB1, text='''
+ttk.Button(TAB3, text="Read", command=ShowMessageOne).pack()
+ttk.Label(TAB3, text='''
 For messages direct to your mailbox, go to http://bglug.ca/mailman/listinfo/group_bglug.ca and sign
 up for the mailing list!''').pack()
 #For messages direct to your mailbox, sign up for the mailing list!
@@ -143,7 +143,7 @@ def subshelp():
     win = Toplevel()
     win.title('Subscribing without the World Wide Web')
     Label(win, text=subhelp).pack()
-ttk.Button(TAB3, text="Subscribing using email", command=subshelp)
+ttk.Button(TAB3, text="Subscribing without a Web browser", command=subshelp)
 # MESSAGES
 # show message on launch
 messagebox.showinfo("Welcome!", "Next meeting: November __ 7pm United Way")
