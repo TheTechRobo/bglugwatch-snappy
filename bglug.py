@@ -103,8 +103,8 @@ ttk.Button(TAB2, text="About Linux", command=abtlin).pack()
 #For tab3.
 ttk.Label(TAB3, text="3 NEWEST MAIL ON MAILING LIST").pack()
 ttk.Label(TAB3, text='''
-1. Andrew Howlett
-Hellvetica font:
+1. From: Andrew Howlett
+Subject: Hellvetica font
 "Hi everyone. ..."''').pack()
 def ShowMessageOne():
     print("Showing message one, if anyone's listening......")
