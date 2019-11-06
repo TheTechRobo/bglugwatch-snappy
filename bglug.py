@@ -68,7 +68,7 @@ main.config(menu=menubar)
 TAB_CONTROL = ttk.Notebook(main)
 #Tab1
 TAB1 = ttk.Frame(TAB_CONTROL)
-TAB_CONTROL.add(TAB1, text='Meetings')
+TAB_CONTROL.add(TAB1, text='Next meeting')
 #Tab2
 TAB2 = ttk.Frame(TAB_CONTROL)
 TAB_CONTROL.add(TAB2, text='Articles')
@@ -77,8 +77,17 @@ TAB3 = ttk.Frame(TAB_CONTROL)
 TAB_CONTROL.add(TAB3, text='Mailing list')
 TAB_CONTROL.pack(expand=1, fill="both")
 #For tab 1
-ttk.Label(TAB1, text="Meeting November 2019").pack()
-ttk.Button(TAB1, text="More info...", command=hello).pack()
+def moreinfomeeting():
+    more = Toplevel()
+    more.title('Next meeting -- Info')
+    # create child window
+    # display message
+    message = '''Our December meeting is _th December, 2019 at 7:pm at the United Way Owen Sound.
+	Bring your beverage (no alcohol!); Andrew will bring pizza.
+	Topic for this meeting: '''
+    Label(more, text=message).pack()
+ttk.Label(TAB1, text="Meeting December 2019").pack()
+ttk.Button(TAB1, text="More info...", command=moreinfomeeting).pack()
 #For tab 2
 def abtlin():
     abtlin = Toplevel()
