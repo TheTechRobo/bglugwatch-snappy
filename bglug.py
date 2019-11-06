@@ -40,6 +40,10 @@ The bglug.ca domain was purchased in November 2002. After several months, the fo
 
 We are constantly evolving and gladly welcome any constructive feedback and suggestions. If you have any thoughts about the group or the site, please let us know!
 
+============
+
+BGLUGwatch is designed to contain info about BGLUG. It contains new messages from the mailing list, articles, and more -- all offline!
+BGLUGwatch is completely opensource; find it on GitHub https://github.com/TheTechRobo/bglugwatch
 BGLUGwatch copyright (c) 2019 Anthony Morassutti. Licensed under the GNU GPLv3. You should have recieved a copy of the license with the program; otherwise go to https://www.gnu.org/licenses/gpl-3.0.en.html
 	'''
     Label(win, text=message).pack()
@@ -96,6 +100,50 @@ def abtlin():
 General Public License which means the source code is freely available to everyone. Linux has powered much of the Internet for years, and is now available with many applications for "desktop" computer users.'''
     ttk.Label(abtlin, text=variablex).pack()
 ttk.Button(TAB2, text="About Linux", command=abtlin).pack()
+#For tab3.
+ttk.Label(TAB3, text="3 NEWEST MAIL ON MAILING LIST").pack()
+ttk.Label(TAB3, text='''
+1. Andrew Howlett
+Hellvetica font:
+"I had to...''').pack()
+def ShowMessageOne():
+    print("Showing message one, if anyone's listening......")
+    content = '''
+	Hi everyone. I had to pass this along for everyone who uses the console and likes tinkering with fonts.
+
+	https://hellveticafont.com/
+
+
+	_______________________________________________
+	Group mailing list
+	Group@bglug.ca
+	http://bglug.ca/mailman/listinfo/group_bglug.ca'''
+    m1 = Toplevel()
+    m1.title('Hellvetica font')
+    Label(m1, text=content).pack()
+ttk.Button(TAB1, text="Read", command=ShowMessageOne)
+ttk.Label(TAB1, text='''
+For messages direct to your mailbox, go to http://bglug.ca/mailman/listinfo/group_bglug.ca and sign
+up for the mailing list!''').pack()
+#For messages direct to your mailbox, sign up for the mailing list!
+#Send mail to group-request@bglug.ca with following format (do not add subject):
+ # subscribe [password] [digest|nodigest] [address=<address>]
+  #You can also send mail to group-request@bglug.ca with following format (do not add subject):
+  #subscribe [password] [digest|nodigest] [address=<address>]''').pack()
+subhelp = '''Subscribe to this mailing list.  Your password must be given to
+       unsubscribe or change your options, but if you omit the password, one
+       will be generated for you.  You may be periodically reminded of your
+       password.
+
+       The next argument may be either: `nodigest' or `digest' (no quotes!).
+       If you wish to subscribe an address other than the address you sent
+       this request from, you may specify `address=<address>' (no brackets
+       around the email address, and no quotes!)'''
+def subshelp():
+    win = Toplevel()
+    win.title('Subscribing without the World Wide Web')
+    Label(win, text=subhelp).pack()
+ttk.Button(TAB3, text="Subscribing using email", command=subshelp)
 # MESSAGES
 # show message on launch
 messagebox.showinfo("Welcome!", "Next meeting: November __ 7pm United Way")
