@@ -1,7 +1,7 @@
 # bglugwatch 0.1
 # copyright (c) 2019 anthony morassutti
 # BGLUGwatch is licensed under the GNU GPLv3
-# import necessary modulesß
+# import necessary modules
 import tkinter
 from tkinter import Button, Label, Text, messagebox, Menu, ttk, colorchooser
 from tkinter import *
