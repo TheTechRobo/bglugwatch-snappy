@@ -131,8 +131,7 @@ Subject: [Bglug] Phishing attempt? Virus payload via MS Office macro?
 (REPLY) "Yes, that"''').pack()
 def showMessageTwo():
     print("Showing messages...")
-    content = '''
-	Hi all:
+    content = '''Hi all:
 
 	Earlier this week I received and email, ostensibly from 'Canada Post' claiming there was a missed package delivery, presumably at my home. It had the logos etc and it was addressed to me, pjr@bmts.com.
 	 But the tracking number in the email was blank.
@@ -157,10 +156,8 @@ def showMessageTwo():
 
 	Peter
 
-
 	-- 
-	Two things are infinite: the universe and human stupidity; and I'm not sure about the the universe. -  Albert Einstein
-	'''
+	Two things are infinite: the universe and human stupidity; and I'm not sure about the the universe. -  Albert Einstein'''
     contentReply = '''
 	Yes, that was certainly malware.  .doc files are a not-infrequent vector
 	for attacks.  Many Windows users are vulnerable; I don't know if
