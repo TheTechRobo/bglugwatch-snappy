@@ -106,12 +106,7 @@ ttk.Label(TAB3, text="3 NEWEST MAIL ON MAILING LIST").pack()
 ttk.Label(TAB3, text='''
 1. From: Jeff L
 Subject: Win 10 antispyware
-"Just heard..."
-
-2. [THREAD] From: Peter and Brad Rodriguez
-Subject: [Bglug] Phishing attempt? Virus payload via MS Office macro?
-(ORIGIN) "Hi all:...
-(REPLY) "Yes, that"''').pack()
+"Just heard..."''').pack()
 def ShowMessageOne():#Message one (Jeff L)
     print("Showing message one, if anyone's listening......")
     content = '''
@@ -130,23 +125,28 @@ def ShowMessageOne():#Message one (Jeff L)
     m1.title('Win 10 antispyware')
     Label(m1, text=content).pack()
 ttk.Button(TAB3, text="Read", command=ShowMessageOne).pack()
+ttk.Label(TAB3, text='''2. [THREAD] From: Peter and Brad Rodriguez
+Subject: [Bglug] Phishing attempt? Virus payload via MS Office macro?
+(ORIGIN) "Hi all:...
+(REPLY) "Yes, that"''').pack()
 def showMessageTwo():
     print("Showing messages...")
     content = '''
 	Hi all:
 
-	Earlier this week I received and email, ostensibly from 'Canada Post' claiming there was a missed package delivery, presumably at my home. It had the logos etc and it was addressed to me, pjr@bmts.com. But the tracking number in the email was blank.
+	Earlier this week I received and email, ostensibly from 'Canada Post' claiming there was a missed package delivery, presumably at my home. It had the logos etc and it was addressed to me, pjr@bmts.com.
+	 But the tracking number in the email was blank.
 
 	There was no record at the local post office of such a package nor was a 'door hanger' left on our front door to signify someone from CP had tried to deliver a package.
 
-	The email included an attachment which, when I tried to open it, was gibberish - reminded me of a postscript file. It had a filename xxx.doc. The instructions at the top of the page said I should open it with MS Office as it was encrypted. I should have been suspicious immediately as there was no tracking number on the email. The alarm bells did not ring!
+	The email included an attachment which, when I tried to open it, was gibberish - reminded me of a postscript file. It had a filename xxx.doc. The instructions at the top of the page said I should open it 
+	with MS Office as it was encrypted. I should have been suspicious immediately as there was no tracking number on the email. The alarm bells did not ring!
 
 	As I do not have MS Office, I could not open the file.
 
 	I got much more suspicious when I tried to forward it, to see if there was a package as the email also had others in the headers. The outgoing email was returned to me by the mail agent because
 
 	"
-
 	host mail.xxxxx.ca[149.248.52.47] said: 550-This message
 	    contains a virus or other harmful content 550 (Doc.Dropper.Agent-7400026-0)
 	    (in reply to end of DATA command)"
@@ -160,12 +160,7 @@ def showMessageTwo():
 
 	-- 
 	Two things are infinite: the universe and human stupidity; and I'm not sure about the the universe. -  Albert Einstein
-
-
-	_______________________________________________
-	Group mailing list
-	Group@bglug.ca
-	http://bglug.ca/mailman/listinfo/group_bglug.ca'''
+	'''
     contentReply = '''
 	Yes, that was certainly malware.  .doc files are a not-infrequent vector
 	for attacks.  Many Windows users are vulnerable; I don't know if
@@ -178,20 +173,14 @@ def showMessageTwo():
 
 	- Brad
 	-- 
-	brad@bradrodriguez.com
-
-	_______________________________________________
-	Group mailing list
-	Group@bglug.ca
-	http://bglug.ca/mailman/listinfo/group_bglug.ca'''
+	brad@bradrodriguez.com'''
     m2 = Toplevel()
     m2.title('[Bglug] Phishing attempt? Virus payload via MS Office macro')
-    Label(m2, text=content)
+    Label(m2, text=content).pack()
     Label(m2, text='''
 	[REPLY]
-	''')
-    Label(m2, text=contentReply)
-    Label()
+	''').pack()
+    Label(m2, text=contentReply).pack()
 ttk.Button(TAB3, text="READ IT.", command=showMessageTwo).pack()
 ttk.Label(TAB3, text='''
 For messages direct to your mailbox, go to http://bglug.ca/mailman/listinfo/group_bglug.ca and sign
