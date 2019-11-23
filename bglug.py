@@ -104,23 +104,25 @@ ttk.Button(TAB2, text="About Linux", command=abtlin).pack()
 #For tab3.
 ttk.Label(TAB3, text="3 NEWEST MAIL ON MAILING LIST").pack()
 ttk.Label(TAB3, text='''
-1. From: Andrew Howlett
-Subject: Hellvetica font
-"Hi everyone. ..."''').pack()
+1. From: Jeff L
+Subject: Win 10 antispyware
+"Just heard..."''').pack()
 def ShowMessageOne():
     print("Showing message one, if anyone's listening......")
     content = '''
-	Hi everyone. I had to pass this along for everyone who uses the console and likes tinkering with fonts.
+	Just heard about this thought people might be interested in.
 
-	https://hellveticafont.com/
+	Free antispy tool for Windows 10
+	https://www.oo-software.com/en/shutup10#
 
+	Jeff
 
 	_______________________________________________
 	Group mailing list
 	Group@bglug.ca
 	http://bglug.ca/mailman/listinfo/group_bglug.ca'''
     m1 = Toplevel()
-    m1.title('Hellvetica font')
+    m1.title('Win 10 antispyware')
     Label(m1, text=content).pack()
 ttk.Button(TAB3, text="Read", command=ShowMessageOne).pack()
 ttk.Label(TAB3, text='''
