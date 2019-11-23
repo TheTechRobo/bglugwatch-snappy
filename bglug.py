@@ -129,6 +129,7 @@ def ShowMessageOne():#Message one (Jeff L)
     m1 = Toplevel()
     m1.title('Win 10 antispyware')
     Label(m1, text=content).pack()
+ttk.Button(TAB3, text="Read", command=ShowMessageOne).pack()
 def showMessageTwo():
     print("Showing messages...")
     content = '''
@@ -191,7 +192,7 @@ def showMessageTwo():
 	''')
     Label(m2, text=contentReply)
     Label()
-ttk.Button(TAB3, text="Read", command=ShowMessageOne).pack()
+ttk.Button(TAB3, text="READ IT.", command=showMessageTwo).pack()
 ttk.Label(TAB3, text='''
 For messages direct to your mailbox, go to http://bglug.ca/mailman/listinfo/group_bglug.ca and sign
 up for the mailing list!''').pack()
