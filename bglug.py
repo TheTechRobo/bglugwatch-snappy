@@ -1,10 +1,11 @@
-# bglugwatch 0.1
+# bglugwatch 0.0
 # copyright (c) 2019 anthony morassutti
 # BGLUGwatch is licensed under the GNU GPLv3
 # import necessary modules
 import tkinter
 from tkinter import Button, Label, Text, messagebox, Menu, ttk, colorchooser
 from tkinter import *
+# set up window
 main = tkinter.Tk()
 menubar = Menu(main)
 main.title("BGLUGwatch")
@@ -51,23 +52,6 @@ BGLUGwatch copyright (c) 2019 Anthony Morassutti. Licensed under the GNU GPLv3. 
     # quit child window and return to root window
     # the button is optional here, simply use the corner x of the child window
     Button(win, text='OK', command=win.destroy).pack()
-# MENUBAR
-# create a pulldown menu, and add it to the menu bar
-filemenu = Menu(menubar, tearoff=0)
-filemenu.add_command(label="About...", command=hello)
-filemenu.add_separator()
-filemenu.add_command(label="Exit BGLUGwatch", command=main.quit)
-menubar.add_cascade(label="BGLUGwatch", menu=filemenu)
-# create another pulldown menu, and add IT to the menu bar
-viewmnu = Menu(menubar, tearoff=0)
-viewmnu.add_command(label="About...", command=hello)
-viewmnu.add_command(label="Articles", command=hello)
-viewmnu.add_command(label="Meeting list", command=hello)
-viewmnu.add_separator()
-viewmnu.add_command(label="Exit BGLUGwatch", command=main.quit)
-menubar.add_cascade(label="View", menu=viewmnu)
-# display the menu
-main.config(menu=menubar)
 # Tabs (src https://djangocentral.com/creating-tabbed-widget-with-python-for-gui-application/)
 #Create Tab Control
 TAB_CONTROL = ttk.Notebook(main)
@@ -201,7 +185,22 @@ def subshelp():
     win.title('Subscribing without the World Wide Web')
     Label(win, text=subhelp).pack()
 ttk.Button(TAB3, text="Subscribing without a Web browser", command=subshelp)
-# MESSAGES
+# MENUBAR
+# create a pulldown menu, and add it to the menu bar
+filemenu = Menu(menubar, tearoff=0)
+filemenu.add_command(label="About...", command=hello)
+filemenu.add_separator()
+filemenu.add_command(label="Exit BGLUGwatch", command=main.quit)
+menubar.add_cascade(label="BGLUGwatch", menu=filemenu)
+# create another pulldown menu, and add IT to the menu bar
+viewmnu = Menu(menubar, tearoff=0)
+viewmnu.add_command(label="About box", command=hello)
+viewmnu.add_command(label="Next meeting", command=moreinfomeeting)
+viewmnu.add_separator()
+viewmnu.add_command(label="Exit BGLUGwatch", command=main.quit)
+menubar.add_cascade(label="View", menu=viewmnu)
+# display the menu
+main.config(menu=menubar)
 # show message on launch
 messagebox.showinfo("Welcome!", "Next meeting: December __ 7pm United Way")
 main.mainloop()
