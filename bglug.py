@@ -52,45 +52,6 @@ BGLUGwatch copyright (c) 2019 Anthony Morassutti. Licensed under the GNU GPLv3. 
     # quit child window and return to root window
     # the button is optional here, simply use the corner x of the child window
     Button(win, text='OK', command=win.destroy).pack()
-# Tabs (src https://djangocentral.com/creating-tabbed-widget-with-python-for-gui-application/)
-#Create Tab Control
-TAB_CONTROL = ttk.Notebook(main)
-#Tab1
-TAB1 = ttk.Frame(TAB_CONTROL)
-TAB_CONTROL.add(TAB1, text='Next meeting')
-#Tab2
-TAB2 = ttk.Frame(TAB_CONTROL)
-TAB_CONTROL.add(TAB2, text='Articles')
-#Tab3
-TAB3 = ttk.Frame(TAB_CONTROL)
-TAB_CONTROL.add(TAB3, text='Mailing list')
-TAB_CONTROL.pack(expand=1, fill="both")
-#For tab 1
-def moreinfomeeting():
-    more = Toplevel()
-    more.title('Next meeting -- Info')
-    # create child window
-    # display message
-    message = '''Our December meeting is _th December, 2019 at 7:pm at the United Way Owen Sound.
-	Bring your beverage (no alcohol!); Andrew will bring pizza.
-	Topic for this meeting: '''
-    Label(more, text=message).pack()
-ttk.Label(TAB1, text="Meeting December 2019").pack()
-ttk.Button(TAB1, text="More info...", command=moreinfomeeting).pack()
-#For tab 2
-def abtlin():
-    abtlin = Toplevel()
-    abtlin.title('About GNU/Linux')
-    variablex = '''GNU/Linux ("Linux") is a clone of the operating system Unix. It was originally created by Linus Torvalds with the assistance of thousands of volunteer developers around the world. It is distributed under the GNU 
-General Public License which means the source code is freely available to everyone. Linux has powered much of the Internet for years, and is now available with many applications for "desktop" computer users.'''
-    ttk.Label(abtlin, text=variablex).pack()
-ttk.Button(TAB2, text="About Linux", command=abtlin).pack()
-#For tab3.
-ttk.Label(TAB3, text="3 NEWEST MAIL ON MAILING LIST").pack()
-ttk.Label(TAB3, text='''
-1. From: Jeff L
-Subject: Win 10 antispyware
-"Just heard..."''').pack()
 def ShowMessageOne():#Message one (Jeff L)
     print("Showing message one, if anyone's listening......")
     content = '''
@@ -108,11 +69,6 @@ def ShowMessageOne():#Message one (Jeff L)
     m1 = Toplevel()
     m1.title('Win 10 antispyware')
     Label(m1, text=content).pack()
-ttk.Button(TAB3, text="Read", command=ShowMessageOne).pack()
-ttk.Label(TAB3, text='''2. [THREAD] From: Peter and Brad Rodriguez
-Subject: [Bglug] Phishing attempt? Virus payload via MS Office macro?
-(ORIGIN) "Hi all:...
-(REPLY) "Yes, that"''').pack()
 def showMessageTwo():
     print("Showing messages...")
     content = '''Hi all:
@@ -162,6 +118,54 @@ def showMessageTwo():
 	[REPLY]
 	''').pack()
     Label(m2, text=contentReply).pack()
+def subshelp():
+    win = Toplevel()
+    win.title('Subscribing without the World Wide Web')
+    Label(win, text=subhelp).pack()
+# Tabs (src https://djangocentral.com/creating-tabbed-widget-with-python-for-gui-application/)
+#Create Tab Control
+TAB_CONTROL = ttk.Notebook(main)
+#Tab1
+TAB1 = ttk.Frame(TAB_CONTROL)
+TAB_CONTROL.add(TAB1, text='Next meeting')
+#Tab2
+TAB2 = ttk.Frame(TAB_CONTROL)
+TAB_CONTROL.add(TAB2, text='Articles')
+#Tab3
+TAB3 = ttk.Frame(TAB_CONTROL)
+TAB_CONTROL.add(TAB3, text='Mailing list')
+TAB_CONTROL.pack(expand=1, fill="both")
+#For tab 1
+def moreinfomeeting():
+    more = Toplevel()
+    more.title('Next meeting -- Info')
+    # create child window
+    # display message
+    message = '''Our December meeting is _th December, 2019 at 7:pm at the United Way Owen Sound.
+	Bring your beverage (no alcohol!); Andrew will bring pizza.
+	Topic for this meeting: '''
+    Label(more, text=message).pack()
+ttk.Label(TAB1, text="Meeting December 2019").pack()
+ttk.Button(TAB1, text="More info...", command=moreinfomeeting).pack()
+#For tab 2
+def abtlin():
+    abtlin = Toplevel()
+    abtlin.title('About GNU/Linux')
+    variablex = '''GNU/Linux ("Linux") is a clone of the operating system Unix. It was originally created by Linus Torvalds with the assistance of thousands of volunteer developers around the world. It is distributed under the GNU 
+General Public License which means the source code is freely available to everyone. Linux has powered much of the Internet for years, and is now available with many applications for "desktop" computer users.'''
+    ttk.Label(abtlin, text=variablex).pack()
+ttk.Button(TAB2, text="About Linux", command=abtlin).pack()
+#For tab3.
+ttk.Label(TAB3, text="3 NEWEST MAIL ON MAILING LIST").pack()
+ttk.Label(TAB3, text='''
+1. From: Jeff L
+Subject: Win 10 antispyware
+"Just heard..."''').pack()
+ttk.Button(TAB3, text="Read", command=ShowMessageOne).pack()
+ttk.Label(TAB3, text='''2. [THREAD] From: Peter and Brad Rodriguez
+Subject: [Bglug] Phishing attempt? Virus payload via MS Office macro?
+(ORIGIN) "Hi all:...
+(REPLY) "Yes, that"''').pack()
 ttk.Button(TAB3, text="READ IT.", command=showMessageTwo).pack()
 ttk.Label(TAB3, text='''
 For messages direct to your mailbox, go to http://bglug.ca/mailman/listinfo/group_bglug.ca and sign
@@ -180,10 +184,6 @@ subhelp = '''Subscribe to this mailing list.  Your password must be given to
        If you wish to subscribe an address other than the address you sent
        this request from, you may specify `address=<address>' (no brackets
        around the email address, and no quotes!)'''
-def subshelp():
-    win = Toplevel()
-    win.title('Subscribing without the World Wide Web')
-    Label(win, text=subhelp).pack()
 ttk.Button(TAB3, text="Subscribing without a Web browser", command=subshelp)
 # MENUBAR
 # create a pulldown menu, and add it to the menu bar
