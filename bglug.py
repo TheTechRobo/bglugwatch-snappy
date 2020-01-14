@@ -204,4 +204,5 @@ menubar.add_cascade(label="View", menu=viewmnu)
 main.config(menu=menubar)
 # show message on launch
 messagebox.showinfo("Welcome!", "Next meeting: December __ 7pm United Way")
+scroll = Scrollbar (main)
 main.mainloop()
