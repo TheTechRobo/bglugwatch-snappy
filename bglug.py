@@ -1,5 +1,5 @@
-# bglugwatch 0.0
-# copyright (c) 2019 anthony morassutti
+# bglugwatch 0.0.1
+# copyright (c) 2020 anthony morassutti
 # BGLUGwatch is licensed under the GNU GPLv3
 # import necessary modules
 import tkinter
