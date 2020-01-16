@@ -113,7 +113,7 @@ def showMessageTwo():
 	-- 
 	brad@bradrodriguez.com'''
     m2 = Toplevel()
-    m2.title('[Bglug] Phishing attempt? Virus payload via MS Office macro')
+    m2.title('Phishing attempt? Virus payload via MS Office macro')
     Label(m2, text=content).pack()
     Label(m2, text='''
 	[REPLY]
