@@ -147,15 +147,16 @@ TAB_CONTROL.pack(expand=1, fill="both")
 #For tab 1
 def moreinfomeeting():
     more = Toplevel()
-    more.title('Next meeting -- Info')
+    more.title('Oh no!')
     # create child window
     # display message
-    message = '''Our December meeting is _th December, 2019 at 7:pm at the United Way Owen Sound.
-	Bring your beverage (no alcohol!); Andrew will bring pizza.
-	Topic for this meeting: '''
+    message = '''BGLUGwatch development has been paused because right now I am very busy and don't see a point in continuing development.
+    If you like it, show your support and Star the repo at www.github.com/thetechrobo/bglugwatch
+    At this point I am kind of feeling like my software is worthless..But don't worry because I will (eventually) continue development.'''
     Label(more, text=message).pack()
-ttk.Label(TAB1, text="Meeting December 2019").pack()
+ttk.Label(TAB1, text="(null)").pack()
 ttk.Button(TAB1, text="More info...", command=moreinfomeeting).pack()
+ttk.Label(TAB1, text="NOTICE: BGLUGwatch development is paused").pack()
 #For tab 2
 def abtlin():
     abtlin = Toplevel()
@@ -192,6 +193,7 @@ subhelp = '''Subscribe to this mailing list.  Your password must be given to
        this request from, you may specify `address=<address>' (no brackets
        around the email address, and no quotes!)'''
 ttk.Button(TAB3, text="Subscribing without a Web browser", command=subshelp)
+ttk.Label(TAB3, text="NOTICE: development is paused").pack()
 # MENUBAR
 # create a pulldown menu, and add it to the menu bar
 filemenu = Menu(menubar, tearoff=0)
@@ -209,6 +211,6 @@ menubar.add_cascade(label="View", menu=viewmnu)
 # display the menu
 main.config(menu=menubar)
 # show message on launch
-messagebox.showerror("Error!", "BGLUGwatch development has been suspended indefinitley as I have gotten pretty busy lately.. \nIf you would like the chances of me resuming it higher, \nplease star the GitHub repo at www.github.com/Thetechrobo/BGLUGwatch.\nThank You")
-scroll = Scrollbar (main)
+messagebox.showerror("Development suspended", "BGLUGwatch development has been suspended indefinitley as I have gotten pretty busy lately.. \nIf you would like the chances of me resuming it higher, \nplease star the GitHub repo at www.github.com/Thetechrobo/BGLUGwatch.\nThank You")
+scroll = Scrollbar(main)
 main.mainloop()
