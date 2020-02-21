@@ -209,6 +209,6 @@ menubar.add_cascade(label="View", menu=viewmnu)
 # display the menu
 main.config(menu=menubar)
 # show message on launch
-messagebox.showerror("Error!", "BGLUGwatch development has been suspended indefinitley")
+messagebox.showerror("Error!", "BGLUGwatch development has been suspended indefinitley. BGLUGwatch development is currently SUSPENDED. \nIf you would like the chances of me resuming it higher, \nplease star the GitHub repo at www.github.com/Thetechrobo/BGLUGwatch\nThank You")
 scroll = Scrollbar (main)
 main.mainloop()
