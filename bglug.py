@@ -1,3 +1,10 @@
+'''
+BGLUGwatch development is currently SUSPENDED. 
+If you would like the chances of me resuming it higher, please star the
+GitHub repo at www.github.com/Thetechrobo/BGLUGwatch
+
+Thank You
+'''
 # bglugwatch 0.0.1
 # copyright (c) 2019-2020 anthony morassutti
 # BGLUGwatch is licensed under the GNU GPLv3 or later, a copyleft license.
@@ -174,9 +181,7 @@ For messages direct to your mailbox, go to http://bglug.ca/mailman/listinfo/grou
 up for the mailing list!''').pack()
 #For messages direct to your mailbox, sign up for the mailing list!
 #Send mail to group-request@bglug.ca with following format (do not add subject):
- # subscribe [password] [digest|nodigest] [address=<address>]
-  #You can also send mail to group-request@bglug.ca with following format (do not add subject):
-  #subscribe [password] [digest|nodigest] [address=<address>]''').pack()
+ # subscribe [password] [digest|nodigest]
 subhelp = '''Subscribe to this mailing list.  Your password must be given to
        unsubscribe or change your options, but if you omit the password, one
        will be generated for you.  You may be periodically reminded of your
@@ -204,6 +209,6 @@ menubar.add_cascade(label="View", menu=viewmnu)
 # display the menu
 main.config(menu=menubar)
 # show message on launch
-messagebox.showinfo("Welcome!", "Next meeting: December __ 7pm United Way")
+messagebox.showerror("Error!", "BGLUGwatch development has been suspended indefinitley")
 scroll = Scrollbar (main)
 main.mainloop()
