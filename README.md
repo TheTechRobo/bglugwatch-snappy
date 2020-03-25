@@ -7,4 +7,4 @@ Bruce-Grey Linux User's Group is designed to help newcomers (and oldcomers) with
 
 ## Links
 [BGLUG website](http://bglug.ca)
-[More info...](https://thetechrobo.github.io/drawer/bginfo.md)
+[More info...](https://thetechrobo.github.io/drawer/bginfo.html)
