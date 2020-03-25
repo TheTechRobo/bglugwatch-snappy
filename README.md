@@ -1,5 +1,3 @@
-###### IMPORTANT: Just because GitHub says the commit checks failed....The checks are incorrect.
-
 # bglugwatch
 Tkinter program for offline viewing of BGLUG's website
 
