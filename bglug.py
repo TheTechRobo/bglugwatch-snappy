@@ -107,32 +107,14 @@ ttk.Button(TAB2, text="About Linux", command=abtlin).pack()
 #For tab3.
 ttk.Label(TAB3, text="3 NEWEST MAIL ON MAILING LIST").pack()
 ttk.Label(TAB3, text='''
-1. From: Jeff L
-Subject: Win 10 antispyware
-"Just heard..."''').pack()
+Under construction''').pack()
 ttk.Button(TAB3, text="Read", command=ShowMessageOne).pack()
-ttk.Label(TAB3, text='''2. [THREAD] From: Peter and Brad Rodriguez
-Subject: [Bglug] Phishing attempt? Virus payload via MS Office macro?
-(ORIGIN) "Hi all:...
-(REPLY) "Yes, that"''').pack()
-ttk.Button(TAB3, text="READ IT.", command=showMessageTwo).pack()
+ttk.Label(TAB3, text='''Under Construction''').pack()
+ttk.Button(TAB3, text="Read", command=showMessageTwo).pack()
 ttk.Label(TAB3, text='''
 For messages direct to your mailbox, go to http://bglug.ca/mailman/listinfo/group_bglug.ca and sign
 up for the mailing list!''').pack()
-#For messages direct to your mailbox, sign up for the mailing list!
-#Send mail to group-request@bglug.ca with following format (do not add subject):
- # subscribe [password] [digest|nodigest]
-subhelp = '''Subscribe to this mailing list.  Your password must be given to
-       unsubscribe or change your options, but if you omit the password, one
-       will be generated for you.  You may be periodically reminded of your
-       password.
-
-       The next argument may be either: `nodigest' or `digest' (no quotes!).
-       If you wish to subscribe an address other than the address you sent
-       this request from, you may specify `address=<address>' (no brackets
-       around the email address, and no quotes!)'''
 ttk.Button(TAB3, text="Subscribing without a Web browser", command=subshelp)
-ttk.Label(TAB3, text="NOTICE: development is paused").pack()
 # MENUBAR
 # create a pulldown menu, and add it to the menu bar
 filemenu = Menu(menubar, tearoff=0)
@@ -150,5 +132,5 @@ menubar.add_cascade(label="View", menu=viewmnu)
 # display the menu
 main.config(menu=menubar)
 # show message on launch
-messagebox.showerror("Development suspended", "BGLUGwatch development has been suspended indefinitley as I have gotten pretty busy lately.. \nIf you would like the chances of me resuming it higher, \nplease star the GitHub repo at www.github.com/Thetechrobo/BGLUGwatch.\nThank You")
+messagebox.showerror("No meeting in April, don't even try.", "There is no meeting in April due to the COVID-19 pandemic, staying safe is more important than computers!")
 main.mainloop()
