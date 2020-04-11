@@ -1,9 +1,4 @@
-'''
-BGLUGwatch is currently OUTDATED.
-Do not use until v.0.2-stable!
-Every version before that is purely for testing purposes.
-'''
-# bglugwatch 0.2
+# bglugwatch-snappy 0.2
 # copyright (c) 2019-2020 ittussarom retals mail ynohtna
 # BGLUGwatch is licensed under the GNU GPLv3 or later, a copyleft license.
 # copyleft states that it is illegal to switch from GNU GPLv3 or later without the explicit permission of Anthony Morassutti (TheTechRobo)
@@ -20,17 +15,8 @@ main = tkinter.Tk()
 menubar = Menu(main)
 main.title("BGLUGwatch")
 # DECLARING
-def uc(): #source www.endpoint.com/blog/2015/01/28/getting-realtime-output-using-python
-    process = subprocess.Popen(['echo', '"Hello stdout"'], stdout=subprocess.PIPE)
-    stdout = process.communicate()[0]
-    if stdout == "Already up to date.":
-        msg.showinfo("Updated", "Please restart BGLUGwatch.")
-        exit()
-    else:
-        msg.showinfo("Already up to date.", "You can use BGLUGwatch freely!")
 def hello():
     win = Toplevel()
-
     win.title('About BGLUG and the program')
     # create child window
     # display message
@@ -149,7 +135,5 @@ menubar.add_cascade(label="View", menu=viewmnu)
 # display the menu
 main.config(menu=menubar)
 # show message on launch
-msg.showinfo("Attempting to update...", "Please wait while git does its job.")
-uc()
 msg.showerror("No meeting in April, don't even try.", "There is no meeting in April due to the COVID-19 pandemic, staying safe is more important than computers!")
 main.mainloop()
