@@ -1,9 +1,7 @@
 '''
-BGLUGwatch development is currently SUSPENDED.
-If you would like the chances of me resuming it higher, please star the
-GitHub repo at www.github.com/Thetechrobo/BGLUGwatch
-
-Thank You
+BGLUGwatch is currently OUTDATED.
+Do not use until v.0.2-stable!
+Every version before that is purely for testing purposes.
 '''
 # bglugwatch 0.0.1
 # copyright (c) 2019-2020 ittussarom retals mail ynohtna
@@ -21,6 +19,7 @@ main.title("BGLUGwatch")
 # DECLARING
 def hello():
     win = Toplevel()
+
     win.title('About BGLUG and the program')
     # create child window
     # display message
@@ -30,18 +29,12 @@ def hello():
         mylist.insert(END, string)
     mylist = Listbox(win, yscrollcommand = scrollbar.set ) #create list
     insert("The Bruce Grey Linux Users Group (BGLUG) was founded in 2000 to bring local Linux users together and to help newcomers to Linux.")
-    insert("The group holds monthly meetings, gives technical presentations,")
-    insert("distributes Linux CD-ROMs and hosts a web site, www.bglug.ca, which provides online support.")
-    insert("The Bruce-Grey Linux Users Group is currently centered in Owen Sound, but has members scattered around Bruce and Grey counties.")
-    insert("The group is freely open to everyone.")
+    insert("The group holds monthly meetings, gives technical presentations, distributes Linux CD-ROMs and hosts a web site, www.bglug.ca, which provides online support.")
+    insert("The Bruce-Grey Linux Users Group is currently centered in Owen Sound, but has members scattered around Bruce and Grey counties. The group is freely open to everyone.")
     insert("We gather together for four main reasons:")
-    insert("- advocacy")
-    insert("- education")
-    insert("- support")
-    insert("- socializing")
+    insert("advocacy, education, support, and socializing.")
     insert("")
-    insert("Bruce Grey Linux User's Group was originally founded by Richard Court in early 2000. Richard Court, ")
-    insert("Brad Rodriguez, Andrew Howlett and Dan Eriksen have been key members since its creation.")
+    insert("Bruce Grey Linux User's Group was originally founded by Richard Court in early 2000. Richard Court, Brad Rodriguez, Andrew Howlett and Dan Eriksen have been key members since its creation.")
     insert("Richard has given up control of BGLUG to the current active maintainer, Dan Eriksen (site admin, LPIC-1 certified).")
     insert("A lot of work is still from the other members of the group, namely Andrew Howlett (meeting coordinator, LPIC-1 certified) who started our free CDs service.")
     insert("Over the last few years we have seen the group grow significantly in size. Nearly everyone has played a role in making the meetings interesting")
@@ -56,7 +49,8 @@ def hello():
     # quit child window and return to root window
     # the button is optional here, simply use the corner x of the child window
     Button(win, text='OK', command=win.destroy).pack()
-def ShowMessageOne():#Message one (Jeff L)
+    win.minsize(1200, 100)
+def ShowMessageOne(): #Message one (Jeff L)
     print("Showing message one, if anyone's listening......")
     content = '''
     Under Construction!'''
