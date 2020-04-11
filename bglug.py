@@ -3,7 +3,7 @@ BGLUGwatch is currently OUTDATED.
 Do not use until v.0.2-stable!
 Every version before that is purely for testing purposes.
 '''
-# bglugwatch 0.0.1
+# bglugwatch 0.2
 # copyright (c) 2019-2020 ittussarom retals mail ynohtna
 # BGLUGwatch is licensed under the GNU GPLv3 or later, a copyleft license.
 # copyleft states that it is illegal to switch from GNU GPLv3 or later without the explicit permission of Anthony Morassutti (TheTechRobo)
@@ -12,7 +12,7 @@ Every version before that is purely for testing purposes.
 import tkinter
 from tkinter import Button, Label, Text, messagebox, Menu, ttk, colorchooser
 from tkinter import *
-from runpy import run_path
+from subprocess import Popen
 from sys import exit
 # set up window
 main = tkinter.Tk()
@@ -44,7 +44,7 @@ def hello():
     insert("The bglug.ca domain was purchased in November 2002. After several months, the forums were added and then eventually our own mailing list.")
     insert("We are constantly evolving and gladly welcome any constructive feedback and suggestions. If you have any thoughts about the group, please let us know!")
     insert("")
-    insert("BGLUGwatch 0.0.1, copyright (c) Ittussarom Retals Mail Ynohtna. Licensed under the GNU GPLv3.")
+    insert("BGLUGwatch 0.2, copyright (c) Ittussarom Retals Mail Ynohtna. Licensed under the GNU GPLv3.")
     insert("Find it on GitHub at: www.github.com/thetechrobo/bglugwatch")
     insert("Thanks for using!")
     mylist.pack(fill = BOTH)
@@ -123,11 +123,13 @@ up for the mailing list!''').pack()
 #TAB4
 def uc():
     try:
-        run_path(path_name="check4Update.py")
+        Popen("git pull", shell=True)
+	messagebox.showinfo("Updated", "Please restart BGLUGwatch.")
+	exit("Please restart BGLUGwatch.")
     except:
         exit("An error occured!")
 ttk.Button(TAB4, text="Update cache", command=uc).pack()
-ttk.Label(TAB4, text="This button will update the cache of BGLUGwatch. It's helpful if you aren't using the snap-store,\nbut otherwise there is no point whatsoever.").pack()
+ttk.Label(TAB4, text="This button will update the cache of BGLUGwatch. It's helpful if you aren't using the snap-store,\nbut otherwise there is no point whatsoever.\nIf you don't have git installed, this will fail. So please, make sure git is installed.").pack()
 # MENUBAR
 # create a pulldown menu, and add it to the menu bar
 filemenu = Menu(menubar, tearoff=0)
