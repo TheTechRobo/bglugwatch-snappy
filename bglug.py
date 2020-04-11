@@ -19,23 +19,16 @@ main = tkinter.Tk()
 menubar = Menu(main)
 main.title("BGLUGwatch")
 # DECLARING
-def insert(string):
-
-    scrollbar = Scrollbar(root)
-    scrollbar.pack( side = RIGHT, fill = Y )
-    mylist.insert(END, string)
-    mylist = Listbox(root, yscrollcommand = scrollbar.set )
-    mylist.pack(fill = BOTH )
-    scrollbar.config( command = mylist.yview )
-    scroll = Scrollbar(main)
-
-
 def hello():
     win = Toplevel()
     win.title('About BGLUG and the program')
     # create child window
     # display message
-    mylist = Listbox(root, yscrollcommand = scrollbar.set ) #create list
+    scrollbar = Scrollbar(win)
+    scrollbar.pack( side = RIGHT, fill = Y )
+    def insert(string):
+        mylist.insert(END, string)
+    mylist = Listbox(win, yscrollcommand = scrollbar.set ) #create list
     insert("The Bruce Grey Linux Users Group (BGLUG) was founded in 2000 to bring local Linux users together and to help newcomers to Linux.")
     insert("The group holds monthly meetings, gives technical presentations,")
     insert("distributes Linux CD-ROMs and hosts a web site, www.bglug.ca, which provides online support.")
@@ -46,7 +39,7 @@ def hello():
     insert("- education")
     insert("- support")
     insert("- socializing")
-    insert()
+    insert("")
     insert("Bruce Grey Linux User's Group was originally founded by Richard Court in early 2000. Richard Court, ")
     insert("Brad Rodriguez, Andrew Howlett and Dan Eriksen have been key members since its creation.")
     insert("Richard has given up control of BGLUG to the current active maintainer, Dan Eriksen (site admin, LPIC-1 certified).")
@@ -55,11 +48,11 @@ def hello():
     insert("and helping to keep the group going.")
     insert("The bglug.ca domain was purchased in November 2002. After several months, the forums were added and then eventually our own mailing list.")
     insert("We are constantly evolving and gladly welcome any constructive feedback and suggestions. If you have any thoughts about the group, please let us know!")
-    insert()
+    insert("")
     insert("BGLUGwatch 0.0.1, copyright (c) Ittussarom Retals Mail Ynohtna. Licensed under the GNU GPLv3.")
     insert("Find it on GitHub at: www.github.com/thetechrobo/bglugwatch")
     insert("Thanks for using!")
-    Label(win, text=message).pack()
+    mylist.pack(fill = BOTH)
     # quit child window and return to root window
     # the button is optional here, simply use the corner x of the child window
     Button(win, text='OK', command=win.destroy).pack()
