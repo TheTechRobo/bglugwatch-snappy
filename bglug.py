@@ -11,14 +11,23 @@ Every version before that is purely for testing purposes.
 # import necessary modules
 import tkinter
 from tkinter import Button, Label, Text, messagebox, Menu, ttk, colorchooser
+from tkinter import messagebox as msg
 from tkinter import *
-from subprocess import Popen
+import subprocess
 from sys import exit
 # set up window
 main = tkinter.Tk()
 menubar = Menu(main)
 main.title("BGLUGwatch")
 # DECLARING
+def uc():
+    process = subprocess.Popen(['echo', '"Hello stdout"'], stdout=subprocess.PIPE)
+    stdout = process.communicate()[0]
+    if stdout == "Already up to date.":
+        msg.showinfo("Updated", "Please restart BGLUGwatch.")
+        exit()
+    else:
+        msg.showinfo("Already up to date.", "You can use BGLUGwatch freely!")
 def hello():
     win = Toplevel()
 
@@ -121,13 +130,6 @@ ttk.Label(TAB3, text='''
 For messages direct to your mailbox, go to http://bglug.ca/mailman/listinfo/group_bglug.ca and sign
 up for the mailing list!''').pack()
 #TAB4
-def uc():
-    try:
-        Popen("git pull", shell=True)
-	messagebox.showinfo("Updated", "Please restart BGLUGwatch.")
-	exit("Please restart BGLUGwatch.")
-    except:
-        exit("An error occured!")
 ttk.Button(TAB4, text="Update cache", command=uc).pack()
 ttk.Label(TAB4, text="This button will update the cache of BGLUGwatch. It's helpful if you aren't using the snap-store,\nbut otherwise there is no point whatsoever.\nIf you don't have git installed, this will fail. So please, make sure git is installed.").pack()
 # MENUBAR
@@ -147,5 +149,7 @@ menubar.add_cascade(label="View", menu=viewmnu)
 # display the menu
 main.config(menu=menubar)
 # show message on launch
-messagebox.showerror("No meeting in April, don't even try.", "There is no meeting in April due to the COVID-19 pandemic, staying safe is more important than computers!")
+msg.showinfo("Attempting to update...", "Please wait while git does its job.")
+uc()
+msg.showerror("No meeting in April, don't even try.", "There is no meeting in April due to the COVID-19 pandemic, staying safe is more important than computers!")
 main.mainloop()
