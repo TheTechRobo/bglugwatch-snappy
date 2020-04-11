@@ -20,7 +20,7 @@ main = tkinter.Tk()
 menubar = Menu(main)
 main.title("BGLUGwatch")
 # DECLARING
-def uc():
+def uc(): #source www.endpoint.com/blog/2015/01/28/getting-realtime-output-using-python
     process = subprocess.Popen(['echo', '"Hello stdout"'], stdout=subprocess.PIPE)
     stdout = process.communicate()[0]
     if stdout == "Already up to date.":
