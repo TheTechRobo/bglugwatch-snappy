@@ -83,6 +83,9 @@ TAB_CONTROL.add(TAB2, text='Articles')
 #Tab3
 TAB3 = ttk.Frame(TAB_CONTROL)
 TAB_CONTROL.add(TAB3, text='Mailing list')
+#TAB4
+TAB4 = ttk.Frame(TAB_CONTROL)
+TAB_CONTROL.add(TAB4, text='Update cache')
 TAB_CONTROL.pack(expand=1, fill="both")
 #For tab 1
 def moreinfomeeting():
@@ -93,15 +96,16 @@ def moreinfomeeting():
     message = '''There is currently No Meeting in April due to the COVID-19 pandemic.
     Stay safe!'''
     Label(more, text=message).pack()
+    Button(more, text="O.K.", command=more.destroy)
 ttk.Label(TAB1, text="(null)").pack()
 ttk.Button(TAB1, text="More info...", command=moreinfomeeting).pack()
-ttk.Label(TAB1, text="NOTICE: BGLUGwatch development is paused").pack()
 #For tab 2
 def abtlin():
     abtlin = Toplevel()
     abtlin.title('About GNU/Linux')
-    variablex = '''GNU/Linux ("Linux") is a clone of the operating system Unix. It was originally created by Linus Torvalds with the assistance of thousands of volunteer developers around the world. It is distributed under the GNU
-General Public License which means the source code is freely available to everyone. Linux has powered much of the Internet for years, and is now available with many applications for "desktop" computer users.'''
+    variablex = '''GNU/Linux ("Linux") is a clone of the operating system Unix. It was originally created by Linus Torvalds with the assistance of
+    thousands of volunteer developers around the world. It is distributed under the GNU General Public License which means the source code is
+    freely available to everyone. Linux has powered much of the Internet for years, and is now available with many applications for "desktop" computer users.'''
     ttk.Label(abtlin, text=variablex).pack()
 ttk.Button(TAB2, text="About Linux", command=abtlin).pack()
 #For tab3.
@@ -114,7 +118,11 @@ ttk.Button(TAB3, text="Read", command=showMessageTwo).pack()
 ttk.Label(TAB3, text='''
 For messages direct to your mailbox, go to http://bglug.ca/mailman/listinfo/group_bglug.ca and sign
 up for the mailing list!''').pack()
-ttk.Button(TAB3, text="Subscribing without a Web browser", command=subshelp)
+#TAB4
+def uc():
+    print("Under construction")
+ttk.Button(TAB4, text="Update cache", command=uc).pack()
+ttk.Label(TAB4, text="This button will update the cache of BGLUGwatch. It's helpful if you aren't using the snap-store,\nbut otherwise there is no point whatsoever.").pack()
 # MENUBAR
 # create a pulldown menu, and add it to the menu bar
 filemenu = Menu(menubar, tearoff=0)
