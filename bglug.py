@@ -12,6 +12,8 @@ Every version before that is purely for testing purposes.
 import tkinter
 from tkinter import Button, Label, Text, messagebox, Menu, ttk, colorchooser
 from tkinter import *
+from runpy import run_path
+from sys import exit
 # set up window
 main = tkinter.Tk()
 menubar = Menu(main)
@@ -103,10 +105,10 @@ ttk.Button(TAB1, text="More info...", command=moreinfomeeting).pack()
 def abtlin():
     abtlin = Toplevel()
     abtlin.title('About GNU/Linux')
-    variablex = '''GNU/Linux ("Linux") is a clone of the operating system Unix. It was originally created by Linus Torvalds with the assistance of
+    linux = '''GNU/Linux ("Linux") is a clone of the operating system Unix. It was originally created by Linus Torvalds with the assistance of
     thousands of volunteer developers around the world. It is distributed under the GNU General Public License which means the source code is
     freely available to everyone. Linux has powered much of the Internet for years, and is now available with many applications for "desktop" computer users.'''
-    ttk.Label(abtlin, text=variablex).pack()
+    ttk.Label(abtlin, text=linux).pack()
 ttk.Button(TAB2, text="About Linux", command=abtlin).pack()
 #For tab3.
 ttk.Label(TAB3, text="3 NEWEST MAIL ON MAILING LIST").pack()
@@ -120,7 +122,10 @@ For messages direct to your mailbox, go to http://bglug.ca/mailman/listinfo/grou
 up for the mailing list!''').pack()
 #TAB4
 def uc():
-    print("Under construction")
+    try:
+        run_path(path_name="check4Update.py")
+    except:
+        exit("An error occured!")
 ttk.Button(TAB4, text="Update cache", command=uc).pack()
 ttk.Label(TAB4, text="This button will update the cache of BGLUGwatch. It's helpful if you aren't using the snap-store,\nbut otherwise there is no point whatsoever.").pack()
 # MENUBAR
