@@ -59,73 +59,24 @@ def hello():
 def ShowMessageOne():#Message one (Jeff L)
     print("Showing message one, if anyone's listening......")
     content = '''
-    Just heard about this thought people might be interested in.
-
-    Free antispy tool for Windows 10
-    https://www.oo-software.com/en/shutup10#
-
-    Jeff
-
-    _______________________________________________
-    Group mailing list
-    Group@bglug.ca
-    http://bglug.ca/mailman/listinfo/group_bglug.ca'''
+    Under Construction!'''
     m1 = Toplevel()
-    m1.title('Win 10 antispyware')
+    m1.title(':(')
     Label(m1, text=content).pack()
 def showMessageTwo():
     print("Showing messages...")
-    content = '''Hi all:
-
-    Earlier this week I received and email, ostensibly from 'Canada Post' claiming there was a missed package delivery, presumably at my home. It had the logos etc and it was addressed to me, pjr@bmts.com.
-     But the tracking number in the email was blank.
-
-    There was no record at the local post office of such a package nor was a 'door hanger' left on our front door to signify someone from CP had tried to deliver a package.
-
-    The email included an attachment which, when I tried to open it, was gibberish - reminded me of a postscript file. It had a filename xxx.doc. The instructions at the top of the page said I should open it
-    with MS Office as it was encrypted. I should have been suspicious immediately as there was no tracking number on the email. The alarm bells did not ring!
-
-    As I do not have MS Office, I could not open the file.
-
-    I got much more suspicious when I tried to forward it, to see if there was a package as the email also had others in the headers. The outgoing email was returned to me by the mail agent because
-
-    "
-    host mail.xxxxx.ca[149.248.52.47] said: 550-This message
-        contains a virus or other harmful content 550 (Doc.Dropper.Agent-7400026-0)
-        (in reply to end of DATA command)"
-
-    In summary then, perhaps this was some kind of scam, a phishing attempt, or perhaps opening the attachment to 'decrypt' it would install a virus. MS Office does macros, doesn't it?
-
-    For your information, as some would say.
-
-    Peter
-
-    --
-    Two things are infinite: the universe and human stupidity; and I'm not sure about the the universe. -  Albert Einstein'''
-    contentReply = '''
-    Yes, that was certainly malware.  .doc files are a not-infrequent vector
-    for attacks.  Many Windows users are vulnerable; I don't know if
-    Linux OpenOffice tries to execute macros.
-
-    In general, I'm suspicious of any unsolicited email that instructs me
-    to "open the attached document" (or zip archive).  I've never had an
-    email from UPS or FedEx or Canada Post or *any* legitimate sender come
-    that way.  When I see such an email, I delete immediately.
-
-    - Brad
-    --
-    brad@bradrodriguez.com'''
+    content = '''Under Construction'''
     m2 = Toplevel()
-    m2.title('Phishing attempt? Virus payload via MS Office macro')
+    m2.title(':(')
     Label(m2, text=content).pack()
-    Label(m2, text='''
-    [REPLY]
-    ''').pack()
+    #Label(m2, text='''
+    #[REPLY]
+    #''').pack()
     Label(m2, text=contentReply).pack()
 def subshelp():
     win = Toplevel()
-    win.title('Subscribing without the World Wide Web')
-    Label(win, text=subhelp).pack()
+    win.title('Under Construction')
+    Label(win, text="Under construction").pack()
 # Tabs (src https://djangocentral.com/creating-tabbed-widget-with-python-for-gui-application/)
 #Create Tab Control
 TAB_CONTROL = ttk.Notebook(main)
@@ -142,12 +93,11 @@ TAB_CONTROL.pack(expand=1, fill="both")
 #For tab 1
 def moreinfomeeting():
     more = Toplevel()
-    more.title('Oh no!')
+    more.title('No meeting in April')
     # create child window
     # display message
-    message = '''BGLUGwatch development has been paused because right now I am very busy and don't see a point in continuing development.
-    If you like it, show your support and Star the repo at www.github.com/thetechrobo/bglugwatch
-    At this point I am kind of feeling like my software is worthless..But don't worry because I will (eventually) continue development.'''
+    message = '''There is currently No Meeting in April due to the COVID-19 pandemic.
+    Stay safe!'''
     Label(more, text=message).pack()
 ttk.Label(TAB1, text="(null)").pack()
 ttk.Button(TAB1, text="More info...", command=moreinfomeeting).pack()
