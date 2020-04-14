@@ -1,0 +1,19 @@
+name: bglugwatch-snappy
+version: 'v.0.2.3'
+summary: OfflineIMAP
+description: |
+  BGLUGwatch is a
+confinement: strict
+base: core18
+
+parts:
+  bglugwatch-snappy:
+    plugin: python
+    python-version: python3
+    source: https://github.com/thetechrobo/bglugwatch-snappy.git
+    stage-packages:
+      - python-six
+
+apps:
+  bglugwatch-snappy:
+    command: usr/bin/bglugwatch
