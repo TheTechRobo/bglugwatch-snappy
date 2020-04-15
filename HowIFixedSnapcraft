@@ -1,0 +1,14 @@
+When I was trying to make the SNAP, when I tried to run SNAPCRAFT it said that
+the address was already taken, was port 53 taken? DNSmasq had this error.
+
+But when I looked at the processes watching Port53, dnsmasq was one of them!
+
+After a day or two of trying to figure it out, I realized that since DNSmasq was hogging DNSmasq's port, what about uninstalling it but keeping DNSmasq-base?
+
+So I ran :
+
+$ sudo apt remove dnsmasq
+
+And it removed DNSmasq but not DNSmasq's base, and it worked !
+
+(Just in case anyone had the same problem.)
