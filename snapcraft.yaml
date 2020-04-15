@@ -2,7 +2,9 @@ name: bglugwatch-snappy
 version: 'v.0.2.3'
 summary: OfflineIMAP
 description: |
-  BGLUGwatch is a
+  BGLUGwatch is a Python 3.x script that shows you the latest information on BGLUG.
+  This is the Snappy Edition -- that is, you  won't receive updates as often as running from the direct source code.
+  So keep that in mind.
 confinement: strict
 base: core18
 
@@ -16,4 +18,4 @@ parts:
 
 apps:
   bglugwatch-snappy:
-    command: usr/bin/bglugwatch
+    command: /usr/bin/bglugwatch
