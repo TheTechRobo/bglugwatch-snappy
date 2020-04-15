@@ -61,7 +61,7 @@ def hello():
     # quit child window and return to root window
     # the button is optional here, simply use the corner x of the child window
     Button(win, text='OK', command=win.destroy).pack()
-    winname.minsize(1200, 100)
+    win.minsize(1200, 100)
 def ShowMessageOne(): #Message one (Jeff L)
     print("Showing message one, if anyone's listening......")
     m1 = Toplevel() #create window
